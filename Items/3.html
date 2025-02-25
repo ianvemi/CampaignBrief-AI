@@ -108,7 +108,7 @@
 <div class="col-md-12 mb-3">
     <label for="creative_type" class="form-label">Creative / Content Type</label>
     <select class="form-control" id="creative_type">
-      <option value="">First, select a channel</option>
+      <option value="">Please select a channel</option>
     </select>
   </div>
 
@@ -272,15 +272,15 @@
       } else {
         const option = document.createElement('option');
         option.value = '';
-        option.text = 'First, select a channel'; 
+        option.text = 'Please select a channel'; 
         creativeTypeSelect.add(option);
       }
     });
   </script>
 
 <script>
-    const numSuggestionsSlider = document.getElementById('num_suggestions');
-    const numSuggestionsValue = document.getElementById('num_suggestions_value');
+    let numSuggestionsSlider = document.getElementById('num_suggestions');
+    let numSuggestionsValue = document.getElementById('num_suggestions_value');
   
     numSuggestionsSlider.addEventListener('input', function() {
       numSuggestionsValue.textContent = this.value;

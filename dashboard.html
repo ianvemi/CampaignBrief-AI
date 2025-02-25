@@ -44,21 +44,25 @@
     </div>
 
     <script>
-        // Función para cargar contenido dinámicamente
-        $(document).ready(function(){
-            // Cargar el contenido inicial
-            function cargarContenido(item) {
-               
-                $('#content').load('items/' + item + '.html');
-            }
+       $(document).ready(function(){
+    function cargarContenido(item) {
+        $.get('items/' + item + '.html', function(data) {
+            $('#content').html(data); 
 
-            // Asignar evento a los enlaces del menú
-            $('.nav-link').on('click', function(e) {
-                e.preventDefault();
-                var item = $(this).data('target');
-                cargarContenido(item);
+            // Ejecutar scripts dentro del HTML cargado
+            $('#content script').each(function() {
+                eval($(this).text());  // Evalúa el script
             });
         });
+    }
+
+    $('.nav-link').on('click', function(e) {
+        e.preventDefault();
+        var item = $(this).data('target');
+        cargarContenido(item);
+    });
+});
+
     </script>
 </body>
 </html>
