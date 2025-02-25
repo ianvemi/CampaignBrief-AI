@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Briefing Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-chubby/css/uicons-solid-chubby.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+    <link rel="stylesheet" href="../Items/styles.css">
+    <style>
+        .form-container {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .ai-suggestions-panel {
+            position: fixed;
+            right: 0;
+            top: 18vh;
+            width: 35%;
+            height: 90vh;
+            background-color: white;
+            border: 1px solid #bdbdbd;
+            padding: 20px;
+           
+            overflow-y: auto;
+        }
+
+
+    
+
+        @media (max-width: 768px) {
+            .ai-suggestions-panel {
+                width: 100%;
+                position: relative;
+            }
+
+            .main-content {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container main-content">
+        
+        <h3 class="mb-5 p-3"><i class="fi fi-rr-edit-alt"></i> Creative Briefing Form</h3>
+        <div class="row">
+            <div class="col-md-7 form-container">
+                
+                <form>
+                    <div class="row">
+                        <!-- Step Field -->
+                        <div class="col-md-12 mb-3">
+                            <label for="step" class="form-label">Step</label>
+                            <input type="text" class="form-control" id="step" placeholder="Step number">
+                        </div>
+
+                        <!-- Step Type Field -->
+                        <div class="col-md-12 mb-3">
+                            <label for="step_type" class="form-label">Journey Step Type</label>
+                            <select class="form-control" id="step_type">
+                                <option value="message">Message</option>
+                                <option value="data_capture">Data Capture</option>
+                            </select>
+                        </div>
+
+
+                        <div class="row">
+                            <!-- Campaign Name Field -->
+                            <div class="col-md-12 mb-3">
+                                <label for="campaign_name" class="form-label">Step Name / Campaign Name</label>
+                                <input type="text" class="form-control" id="campaign_name" placeholder="Campaign Name">
+                            </div>
+
+                            <!-- Channel Field -->
+                            <div class="col-md-12 mb-3">
+                                <label for="channel" class="form-label">Channel</label>
+                                <select class="form-control" id="channel">
+                                    <option value="">Select a Channel</option>
+                                    <option value="edm">EDM</option>
+                                    <option value="sms">SMS</option>
+                                    <option value="web_push">Web Push</option>
+                                    <option value="web_content_card">Web Content Card</option>
+                                    <option value="web_iam">Web IAM</option>
+                                    <option value="app_push">App Push</option>
+                                    <option value="app_content_card">App Content Card</option>
+                                    <option value="app_iam">App IAM</option>
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <!-- Objective Field -->
+                                <div class="col-md-12 mb-3">
+                                    <label for="objective" class="form-label">Objective</label>
+                                    <textarea class="form-control" id="objective" rows="3"
+                                        placeholder="Objective of the campaign"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                              <!-- Creative / Content Type Field -->
+<div class="col-md-12 mb-3">
+    <label for="creative_type" class="form-label">Creative / Content Type</label>
+    <select class="form-control" id="creative_type">
+      <option value="">First, select a channel</option>
+    </select>
+  </div>
+
+                                <!-- Copy / Image Reference / CTA Link Field -->
+                                <div class="col-md-12 mb-3">
+                                    <label for="cta_link" class="form-label">Copy / Image Reference / CTA Link</label>
+                                    <input type="text" class="form-control" id="cta_link"
+                                        placeholder="Reference or CTA Link">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Character Limit Field -->
+                                <div class="col-md-12 mb-3">
+                                    <label for="character_limit" class="form-label">Character Limit</label>
+                                    <input type="number" class="form-control" id="character_limit"
+                                        placeholder="Character Limit">
+                                </div>
+
+                                <!-- Include Emojis Field -->
+                                <div class="col-md-12 mb-3">
+                                    <label for="include_emojis" class="form-label">Include Emojis &#128515;</label>
+                                    <select class="form-select" id="include_emojis">
+                                        <option selected>Select Emojis Option</option>
+                                        <option value="yes">Yes &#128526;</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Behavioral Tools Field -->
+                                <div class="col-md-12 mb-3">
+                                    <label for="behavioral_tools" class="form-label">Behavioural Tools (abbr)</label>
+                                    <input type="text" class="form-control" id="behavioral_tools"
+                                        placeholder="e.g., SP, CC, LA">
+                                </div>
+
+                                <!-- Number of Suggestions Field -->
+<div class="col-md-12 mb-3">
+    <label for="num_suggestions" class="form-label">
+      No. Suggestions: <span id="num_suggestions_value">3</span>
+    </label>
+    <input type="range" class="form-range" id="num_suggestions" min="1" max="5" step="1" value="3">
+  </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Add to AI Suggestions Field -->
+                                <div class="col-md-12 mb-3">
+                                    <label for="add_ai_suggestions" class="form-label">Add to AI Suggestions</label>
+                                    <select class="form-select" id="add_ai_suggestions">
+                                        <option selected>Select Yes or No</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Submit -->
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Suggestions Panel -->
+    <div class="col-md-5 ai-suggestions-panel rounded">
+        <h4 class="text-secondary mb-5 mt-2" > <i class="fi fi-sc-sparkles text-primary"></i> AI Suggestions</h4>
+        <div id="ai-suggestions-results">
+            <ul id="ai-suggestions-list" class="mb-5">
+                <!-- RESULTADOS -->
+                <li>No suggestions yet.</li>
+            </ul>
+        </div>
+        <div class="d-flex justify-content-between mt-3">
+            <button class="btn btn-primary" id="send-to-sas">Send to SAS CI 360</button>
+            <button class="btn btn-danger" id="clear-results">Clear Results</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+      
+        document.getElementById('send-to-sas').addEventListener('click', function () {
+            alert('Results sent to SAS CI 360');
+           
+        });
+
+     
+        document.getElementById('clear-results').addEventListener('click', function () {
+            document.getElementById('ai-suggestions-list').innerHTML = '<li>No suggestions yet.</li>';
+        });
+    </script>
+
+
+<script>
+    const channelSelect = document.getElementById('channel');
+    const creativeTypeSelect = document.getElementById('creative_type');
+  
+    // Mapeo de opciones según el canal seleccionado
+    const creativeOptions = {
+      edm: [
+        { value: 'edm_subject_line', text: 'EDM Subject Line' },
+        { value: 'edm_preheader', text: 'EDM Preheader' },
+        { value: 'edm_body_copy', text: 'EDM Body Copy' },
+        { value: 'edm_cta', text: 'EDM CTA' },
+        { value: 'edm_hero_image', text: 'EDM Hero Image' },
+        { value: 'edm_ad_banner', text: 'EDM Ad Banner' },
+        { value: 'edm_general_image', text: 'EDM General Image' }
+      ],
+      sms: [
+        { value: 'sms_copy', text: 'SMS Copy' },
+        { value: 'sms_cta', text: 'SMS CTA' }
+      ],
+      web_push: [
+        { value: 'web_push_copy', text: 'Web Push Copy' },
+        { value: 'web_push_image', text: 'Web Push Image' },
+        { value: 'web_push_cta', text: 'Web Push CTA' }
+      ],
+      web_content_card: [
+        { value: 'web_content_card_image', text: 'Web Content Card Image' },
+        { value: 'web_contact_card_cta', text: 'Web Contact Card CTA' }
+      ],
+      web_iam: [
+        { value: 'web_iam_copy', text: 'Web IAM Copy' },
+        { value: 'web_iam_cta', text: 'Web IAM CTA' }
+      ],
+      app_push: [
+        { value: 'app_push_copy', text: 'App Push Copy' },
+        { value: 'app_push_image', text: 'App Push Image' },
+        { value: 'app_push_cta', text: 'App Push CTA' }
+      ],
+      app_content_card: [
+        { value: 'app_content_card_image', text: 'App Content Card Image' },
+        { value: 'app_contact_card_cta', text: 'App Contact Card CTA' }
+      ],
+      app_iam: [
+        { value: 'app_iam_copy', text: 'App IAM Copy' },
+        { value: 'app_iam_cta', text: 'App IAM CTA' }
+      ]
+    };
+  
+    // Escuchar el cambio en el campo Channel
+    channelSelect.addEventListener('change', function() {
+      const selectedChannel = this.value;
+      creativeTypeSelect.innerHTML = ''; // Limpiar opciones previas
+  
+      if (selectedChannel && creativeOptions[selectedChannel]) {
+        creativeOptions[selectedChannel].forEach(optionData => {
+          const option = document.createElement('option');
+          option.value = optionData.value;
+          option.text = optionData.text;
+          creativeTypeSelect.add(option);
+        });
+      } else {
+        const option = document.createElement('option');
+        option.value = '';
+        option.text = 'First, select a channel'; 
+        creativeTypeSelect.add(option);
+      }
+    });
+  </script>
+
+<script>
+    const numSuggestionsSlider = document.getElementById('num_suggestions');
+    const numSuggestionsValue = document.getElementById('num_suggestions_value');
+  
+    numSuggestionsSlider.addEventListener('input', function() {
+      numSuggestionsValue.textContent = this.value;
+    });
+  </script>
+</body>
+
+</html>
