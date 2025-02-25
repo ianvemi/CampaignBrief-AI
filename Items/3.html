@@ -257,10 +257,10 @@
       ]
     };
   
-    // Escuchar el cambio en el campo Channel
+    // Actualización de las opciones del campo "Creative / Content Type"
     channelSelect.addEventListener('change', function() {
       const selectedChannel = this.value;
-      creativeTypeSelect.innerHTML = ''; // Limpiar opciones previas
+      creativeTypeSelect.innerHTML = ''; 
   
       if (selectedChannel && creativeOptions[selectedChannel]) {
         creativeOptions[selectedChannel].forEach(optionData => {
