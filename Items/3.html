@@ -9,8 +9,9 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-chubby/css/uicons-solid-chubby.css'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-
     <link rel="stylesheet" href="../Items/styles.css">
+   
+
     <style>
         .form-container {
             max-height: 80vh;
@@ -49,7 +50,7 @@
 <body>
     <div class="container main-content">
         
-        <h3 class="mb-5 p-3"><i class="fi fi-rr-edit-alt"></i> Creative Briefing Form</h3>
+        <h3 class="mb-5 p-3"><i class="fi fi-rr-edit-alt"></i>  Creative Briefing Form</h3>
         <div class="row">
             <div class="col-md-7 form-container">
                 
@@ -211,11 +212,11 @@
 
 
 <script>
-    const channelSelect = document.getElementById('channel');
-    const creativeTypeSelect = document.getElementById('creative_type');
+    var channelSelect = document.getElementById('channel');
+    var creativeTypeSelect = document.getElementById('creative_type');
   
     // Mapeo de opciones según el canal seleccionado
-    const creativeOptions = {
+    var creativeOptions = {
       edm: [
         { value: 'edm_subject_line', text: 'EDM Subject Line' },
         { value: 'edm_preheader', text: 'EDM Preheader' },
@@ -259,18 +260,18 @@
   
     // Actualización de las opciones del campo "Creative / Content Type"
     channelSelect.addEventListener('change', function() {
-      const selectedChannel = this.value;
+      var selectedChannel = this.value;
       creativeTypeSelect.innerHTML = ''; 
   
       if (selectedChannel && creativeOptions[selectedChannel]) {
         creativeOptions[selectedChannel].forEach(optionData => {
-          const option = document.createElement('option');
+          var option = document.createElement('option');
           option.value = optionData.value;
           option.text = optionData.text;
           creativeTypeSelect.add(option);
         });
       } else {
-        const option = document.createElement('option');
+        var option = document.createElement('option');
         option.value = '';
         option.text = 'Please select a channel'; 
         creativeTypeSelect.add(option);
@@ -279,8 +280,8 @@
   </script>
 
 <script>
-    let numSuggestionsSlider = document.getElementById('num_suggestions');
-    let numSuggestionsValue = document.getElementById('num_suggestions_value');
+    var numSuggestionsSlider = document.getElementById('num_suggestions');
+    var numSuggestionsValue = document.getElementById('num_suggestions_value');
   
     numSuggestionsSlider.addEventListener('input', function() {
       numSuggestionsValue.textContent = this.value;

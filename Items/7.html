@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Items/styles.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <style>
+        .element {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            margin: 5px;
+            color: white; /* Text color */
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .element:hover {
+            transform: scale(1.1); /* Hover effect */
+        }
+        .concept-table {
+            margin-top: 20px;
+        }
+        .code {
+            font-size: 0.8rem; /* Smaller font size for the code */
+        }
+        .text {
+            font-size: 0.8rem; /* Smaller font size for the text */
+        }
+        .symbol {
+            font-weight: bold; /* Symbol in bold */
+            font-size: 1.2rem; /* Larger font size for the symbol */
+        }
+        .information {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .lorem {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h3 class="mb-5 p-3"><i class="fi fi-rr-head-side-heart"></i>  Psychological Tools</h3>
+
+       <!-- Information of the Concept -->
+       <div id="information" class="information">
+        <h4 id="elementName">Select a concept</h4>
+        <p id="elementDescription">Click on a square to see more details.</p>
+        <p id="loremText" class="lorem"></p>
+    </div>
+    
+    <!-- Concept Table -->
+    <div class="row concept-table">
+        <!-- Row 1 -->
+        <div class="col-1 element" style="background-color: #fc563c;" onclick="showInformation('0001', 'FT', 'Fast Thinking', 'Consumer decisions are significantly influenced by instinctive, emotional and unconscious drivers (system1: fast thinking) rather than by rational, deliberate and conscious drivers (system2: slow thinking). When our brains are in system 1, we are more stimulus driven. e.g. someone may be looking for red items, but an unexpected, sudden appearance of a non-red object may inadvertently draw the attention of the subject.')">
+            <div class="code">0001</div>
+            <div class="symbol">FT</div>
+            <div class="text">Fast Thinking</div>
+        </div>
+        <div class="col-1 element" style="background-color: #fc563c;" onclick="showInformation('0018', 'BoE', 'Beginning or End', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula magna non ligula interdum.')">
+            <div class="code">0018</div>
+            <div class="symbol">BoE</div>
+            <div class="text">Beginning or End</div>
+        </div>
+        <div class="col-1 element" style="background-color: #ca1956;" onclick="showInformation('0020', 'LI', 'Liking', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus facilisis ligula a purus cursus.')">
+            <div class="code">0020</div>
+            <div class="symbol">LI</div>
+            <div class="text">Liking</div>
+        </div>
+        <div class="col-1 element" style="background-color: #fda128;" onclick="showInformation('0015', 'CB', 'Confirmation Bias', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel velit auctor, dapibus nunc non.')">
+            <div class="code">0015</div>
+            <div class="symbol">CB</div>
+            <div class="text">Confirmation Bias</div>
+        </div>
+        <div class="col-1 element" style="background-color: #fda129;" onclick="showInformation('0040', 'DM', 'Desire for Mastery', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut dui metus. Vestibulum in.')">
+            <div class="code">0040</div>
+            <div class="symbol">DM</div>
+            <div class="text">Desire for Mastery</div>
+        </div>
+        <div class="col-1 element" style="background-color: #fda130;" onclick="showInformation('0013', 'GE', 'Goal Effects', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat nisi quis orci volutpat.')">
+            <div class="code">0013</div>
+            <div class="symbol">GE</div>
+            <div class="text">Goal Effects</div>
+        </div>
+        <div class="col-1 element" style="background-color: #fc3cba;" onclick="showInformation('0017', 'PR', 'Priming', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu sapien.')">
+            <div class="code">0017</div>
+            <div class="symbol">PR</div>
+            <div class="text">Priming</div>
+        </div>
+        <div class="col-1 element" style="background-color: #fc3cba;" onclick="showInformation('0036', 'CW', 'Concrete Words', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut libero id enim luctus.')">
+            <div class="code">0036</div>
+            <div class="symbol">CW</div>
+            <div class="text">Concrete Words</div>
+        </div>
+        <div class="col-1 element" style="background-color: #fc3cba;" onclick="showInformation('0030', 'SA', 'Safety', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.')">
+            <div class="code">0030</div>
+            <div class="symbol">SA</div>
+            <div class="text">Safety</div>
+        </div>
+        <div class="col-1 element" style="background-color: #231b96;" onclick="showInformation('0043', 'CR', 'Continuous Reinforcement', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla malesuada arcu at neque viverra.')">
+            <div class="code">0043</div>
+            <div class="symbol">CR</div>
+            <div class="text">Continuous Reinforcement</div>
+        </div>
+        <div class="col-1 element" style="background-color: #231b97;" onclick="showInformation('0045', 'VIR', 'Variable Interval Rewards', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod ante vel nisi tristique.')">
+            <div class="code">0045</div>
+            <div class="symbol">VIR</div>
+            <div class="text">Variable Interval Rewards</div>
+        </div>
+    </div>
+
+ 
+</div>
+
+<script>
+    function showInformation(code, symbol, name, lorem) {
+        document.getElementById("elementName").textContent = name;
+        document.getElementById("elementDescription").textContent = "Code: " + code + ", Symbol: " + symbol + ", Name: " + name;
+        document.getElementById("loremText").textContent = lorem;
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

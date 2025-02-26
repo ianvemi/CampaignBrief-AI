@@ -20,7 +20,7 @@
         <div class="row">
             <!-- Sidebar -->
             <nav class="col-md-3 col-lg-2 d-md-block sidebar p-3">
-                <button class="btn btn-primary w-100 mb-3" data-bs-toggle="collapse" data-bs-target="#menu">☰ Menú</button>
+                <button class="btn btn-primary w-100 mb-3" data-target="dashboard">☰ Menú</button>
                 <div class="collapse show" id="menu">
                     <ul class="nav flex-column">
                         <li class="nav-item"><a class="nav-link" href="#" data-target="1">1 Campaign Design</a></li>
@@ -35,34 +35,90 @@
                 </div>
             </nav>
             
-            <!-- Contenido Principal -->
-            <main class="col-md-9 col-lg-10 p-4" id="content">
-                <h2>Bienvenido</h2>
-             
-            </main>
+           <!-- Contenido Principal -->
+<main class="col-md-9 col-lg-10 p-4" id="content">
+    <div class="container">
+        <!-- Encabezado -->
+        <div class="row mb-4">
+            <div class="col">
+                <h1 class="text-primary fw-bold">Welcome</h1>
+                <h3 class="text-secondary">Campaign Data & Creative Brief Template</h3>
+            </div>
         </div>
+
+        <!-- Tarjetas de contenido -->
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Campaign Design</h5>
+                        <p class="card-text">Start by designing your campaign strategies here. Organize and plan the content, objectives, and audience.</p>
+                        <a href="#" class="btn btn-primary">Go to Campaign Design</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Brief</h5>
+                        <p class="card-text">Gather all the data you need for the brief. This section will help you outline the necessary information.</p>
+                        <a href="#" class="btn btn-primary">Go to Data Brief</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Creative / Content Brief</h5>
+                        <p class="card-text">Outline your creative direction and content ideas. This is where the magic of the campaign happens.</p>
+                        <a href="#" class="btn btn-primary">Go to Content Brief</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">AI Suggestions</h5>
+                        <p class="card-text">Let AI help you with campaign suggestions based on previous campaigns and insights.</p>
+                        <a href="#" class="btn btn-primary">Explore AI Suggestions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
     </div>
 
     <script>
-       $(document).ready(function(){
-    function cargarContenido(item) {
-        $.get('items/' + item + '.html', function(data) {
-            $('#content').html(data); 
+        $(document).ready(function(){
+            function cargarContenido(item) {
+                if (item === "dashboard") {
+                    location.reload();
+                } else {
+                    $.get('items/' + item + '.html', function(data) {
+                        $('#content').html(data);
+                        $('#content script').each(function() {
+                            eval($(this).text());
+                        });
+                    });
+                }
+            }
 
-            // Ejecutar scripts dentro del HTML cargado
-            $('#content script').each(function() {
-                eval($(this).text());  // Evalúa el script
+            $('.nav-link, button[data-target]').on('click', function(e) {
+                e.preventDefault();
+                var item = $(this).data('target');
+                cargarContenido(item);
             });
         });
-    }
-
-    $('.nav-link').on('click', function(e) {
-        e.preventDefault();
-        var item = $(this).data('target');
-        cargarContenido(item);
-    });
-});
-
     </script>
 </body>
 </html>

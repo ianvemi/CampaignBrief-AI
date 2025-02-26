@@ -1,4 +1,8 @@
 
+
+/* GLOBALES*/
+
+
 /* Estilos para inputs y selects */
 .form-control,
 .form-select {
@@ -48,3 +52,21 @@
   box-shadow: 0 0 0 2px rgba(33,150,243, 0.5);
 }
 
+
+
+/* DASHBOARD */
+
+.nav-link{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: rgb(65, 65, 65);
+}
+
+.nav-link:hover{
+  background-color: #ebebebc2;
+}
+
+.nav-link:focus, .nav-link:hover {
+  color: var(--bs-nav-link-hover-color);
+  background-color: #ebebebc2;
+}
