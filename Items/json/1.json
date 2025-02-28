@@ -1,0 +1,23 @@
+{
+    "targetMethod": [
+        "Trigger Based",
+        "Adhoc - Scheduled",
+        "Model Based",
+        "Time Based "
+    ],
+    "oneOffOrAlwaysOn": [
+        "One-Off",
+        "Always On"
+    ],
+    "lifecycleObjective": [
+        "Onboarding",
+        "Activation",
+        "Repetition",
+        "Habituation",
+        "Loyalty",
+        "Churn Prevention",
+        "Winback",
+        "Onboard & Activate",
+        "Repetition & Habituation"
+    ]
+}
